@@ -1,3 +1,4 @@
+
 # path --> /etc/grub.d/10_linux
 
 #! /bin/sh
@@ -31,14 +32,14 @@ export TEXTDOMAINDIR="${datarootdir}/locale"
 CLASS="--class gnu-linux --class gnu --class os"
 SUPPORTED_INITS="sysvinit:/lib/sysvinit/init systemd:/lib/systemd/systemd upstart:/sbin/upstart"
 if [ "x${GRUB_DISTRIBUTOR}" = "x" ] ; then
-  OS=gLiTcH-SERVER\ GNU/Linux
+  OS=gLiTcH\ GNU/Linux
 else
   case ${GRUB_DISTRIBUTOR} in
     Ubuntu|Kubuntu)
       OS="${GRUB_DISTRIBUTOR}"
       ;;
     *)
-      OS=gLiTcH-SERVER\ GNU/Linux
+      OS=gLiTcH\ GNU/Linux
       ;;
   esac
   CLASS="--class $(echo ${GRUB_DISTRIBUTOR} | tr 'A-Z' 'a-z' | cut -d' ' -f1|LC_ALL=C sed 's,[^[:alnum:]_],_,g') ${CLASS}"
