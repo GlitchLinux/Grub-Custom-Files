@@ -11,18 +11,15 @@ menuentry "gLiTcH - Boot ISO to RAM" {
     initrd /initrd.img-6.1.0-34-amd64
 }
 
-
 menuentry "gLiTcH - Encrypted Persistence" {
 	linux /vmlinuz-6.1.0-34-amd64 boot=live components quiet splash noeject findiso=${iso_path} persistent=cryptsetup persistence-encryption=luks persistence
 	initrd /initrd.img-6.1.0-34-amd64
 }
 
 menuentry "Netboot.xyz (BIOS)" {
-    search --no-floppy --fs-uuid --set=root 4849164b-5b1e-409f-8e8f-6578266229bd
     linux16 /grub/netboot.xyz/netboot.xyz.lkrn
 }
 
 menuentry "Netboot.xyz (UEFI)" {
-    search --no-floppy --fs-uuid --set=root 4849164b-5b1e-409f-8e8f-6578266229bd
     chainloader /grub/netboot.xyz/EFI/BOOT/BOOTX64.EFI
 }
